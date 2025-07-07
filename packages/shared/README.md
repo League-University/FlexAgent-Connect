@@ -1,11 +1,11 @@
 # Shared Package (`@extension/shared`)
 
-This package contains shared TypeScript types, utilities, and constants used across the MCP SuperAssistant extension, particularly between the content script and background script components.
+This package contains shared TypeScript types, utilities, and constants used across the FlexAgent Connect extension, particularly between the content script and background script components.
 
 ## Contents
 
 ### Types
-- **`toolCall.ts`**: TypeScript definitions for MCP tool calls, execution results, and related data structures
+- **`toolCall.ts`**: TypeScript definitions for FlexAgent tool calls, execution results, and related data structures
 
 ## Usage
 

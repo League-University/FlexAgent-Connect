@@ -1,13 +1,13 @@
 {
-  "name": "mcp-superassistant",
+  "name": "flexagent-connect",
   "version": "0.5.1",
-  "description": "MCP SuperAssistant",
+  "description": "FlexAgent Connect - Agent-centric browser extension for connecting to FlexAgent servers",
   "license": "MIT",
   "private": true,
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/srbhptl39/MCP-SuperAssistant.git"
+    "url": "git@github.com:League-University/FlexAgent-Connect.git"
   },
   "type": "module",
   "scripts": {

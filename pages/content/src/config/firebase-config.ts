@@ -1,4 +1,4 @@
-// Firebase configuration for MCP SuperAssistant
+// Firebase configuration for FlexAgent Connect
 import { initializeApp, type FirebaseApp } from 'firebase/app';
 import { 
   getRemoteConfig, 

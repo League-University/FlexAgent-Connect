@@ -20,14 +20,14 @@ const packageJson = JSON.parse(readFileSync('./package.json', 'utf8'));
 const manifest = {
   manifest_version: 3,
   default_locale: 'en',
-  name: 'MCP SuperAssistant',
+  name: 'FlexAgent Connect',
   browser_specific_settings: {
     gecko: {
-      id: 'saurabh@mcpsuperassistant.ai',
+      id: 'flexagent@league.university',
     },
   },
   version: packageJson.version,
-  description: 'MCP SuperAssistant',
+  description: 'FlexAgent Connect - Agent-centric browser extension for connecting to FlexAgent servers',
   host_permissions: [
     '*://*.perplexity.ai/*',
     '*://*.chat.openai.com/*',

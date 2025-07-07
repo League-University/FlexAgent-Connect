@@ -220,7 +220,7 @@ const renderSystemMessageBox = (block: HTMLElement, content: string): void => {
     const config: ExpandableConfig = {
       blockId,
       className: 'system-message-container',
-      headerText: 'MCP SuperAssistant',
+      headerText: 'FlexAgent Connect',
       expandTitle: 'Expand system message',
       collapseTitle: 'Collapse system message',
     };
@@ -375,7 +375,7 @@ export const renderFunctionResult = (block: HTMLElement, isProcessingRef: { curr
     // Get the content of the block
     const content = block.textContent || '';
 
-    // Check if it contains MCP SuperAssistant system message tags
+    // Check if it contains FlexAgent Connect system message tags
     if (content.includes('<SYSTEM>') || content.includes('</SYSTEM>')) {
       // Extract content between SYSTEM tags
       const systemMatch = content;

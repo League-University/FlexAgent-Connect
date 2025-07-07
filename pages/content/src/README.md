@@ -1,13 +1,13 @@
 # Content Script Source (`src`)
 
-This directory is the root for all source code of the MCP-SuperAssistant content script, built on a modern plugin architecture with Zustand state management and React hooks integration.
+This directory is the root for all source code of the FlexAgent Connect content script, built on a modern plugin architecture with Zustand state management and React hooks integration.
 
 ## Overview
 
 The content script is a modular, event-driven system responsible for:
 - Interacting with AI platform web pages
 - Managing injected UI components 
-- Executing MCP tools via site-specific adapters
+- Executing FlexAgent tools via site-specific adapters
 - Maintaining application state across different contexts
 - Communicating with the background script
 
@@ -33,10 +33,10 @@ Modern React patterns for component integration:
 #### **`stores/`** - State Management
 Zustand-based state management with domain-specific stores:
 - **App Store**: Global application state
-- **Connection Store**: MCP server connection management  
+- **Connection Store**: FlexAgent server connection management  
 - **UI Store**: Interface state and preferences
 - **Adapter Store**: Plugin and adapter state
-- **Tools Store**: MCP tool execution state
+- **Tools Store**: FlexAgent tool execution state
 
 #### **`events/`** - Event System
 Typed event bus for decoupled communication:
@@ -129,4 +129,4 @@ eventBus.on('tool:executed', (data) => { /* handle */ });
 5. **React Integration**: Modern hooks patterns for component development
 6. **State Management**: Predictable state updates via Zustand stores
 
-This architecture ensures maintainability, scalability, and extensibility while providing a robust foundation for the MCP SuperAssistant functionality.
+This architecture ensures maintainability, scalability, and extensibility while providing a robust foundation for the FlexAgent Connect functionality.

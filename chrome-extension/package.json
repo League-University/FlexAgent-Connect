@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension",
+  "name": "flexagent-connect-extension",
   "version": "0.5.1",
-  "description": "chrome extension - core settings",
+  "description": "FlexAgent Connect browser extension - core settings",
   "type": "module",
   "private": true,
   "sideEffects": false,

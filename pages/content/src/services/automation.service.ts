@@ -1,5 +1,5 @@
 /**
- * Automation Service for MCP SuperAssistant
+ * Automation Service for FlexAgent Connect
  * 
  * This service handles the automation features (auto insert, auto submit, auto execute)
  * that were previously part of the legacy adapter system. It integrates with the new
@@ -10,7 +10,7 @@
  * - Auto Submit: Automatically submit forms after auto-insertion
  * - Auto Execute: Log when tool execution is completed (extensible for future features)
  * 
- * The service listens for 'mcp:tool-execution-complete' events and performs actions
+ * The service listens for 'flexagent:tool-execution-complete' events and performs actions
  * based on the current automation state from the user preferences store.
  */
 
@@ -83,7 +83,7 @@ export interface AutomationState {
 
 /**
  * Automation Service Class
- * Handles all automation logic for MCP tool execution results
+ * Handles all automation logic for FlexAgent tool execution results
  */
 export class AutomationService {
   private static instance: AutomationService | null = null;
@@ -121,8 +121,8 @@ export class AutomationService {
     // Set up event listener for tool execution completion
     this.setupToolExecutionListener();
 
-    // Listen for MCP state changes to update automation availability
-    this.setupMCPStateListener();
+    // Listen for FlexAgent state changes to update automation availability
+    this.setupFlexAgentStateListener();
 
     // Expose initial automation state to window for render_prescript access
     await this.exposeAutomationStateToWindow();
@@ -144,7 +144,7 @@ export class AutomationService {
 
     // Remove DOM event listener
     if (this.eventListener) {
-      document.removeEventListener('mcp:tool-execution-complete', this.eventListener);
+      document.removeEventListener('flexagent:tool-execution-complete', this.eventListener);
       this.eventListener = null;
     }
 
@@ -158,7 +158,7 @@ export class AutomationService {
   private setupToolExecutionListener(): void {
     // Remove existing listener if any
     if (this.eventListener) {
-      document.removeEventListener('mcp:tool-execution-complete', this.eventListener);
+      document.removeEventListener('flexagent:tool-execution-complete', this.eventListener);
     }
 
     // Create new event listener
@@ -167,18 +167,18 @@ export class AutomationService {
     };
 
     // Add event listener to document
-    document.addEventListener('mcp:tool-execution-complete', this.eventListener);
+    document.addEventListener('flexagent:tool-execution-complete', this.eventListener);
     console.debug('[AutomationService] Tool execution event listener registered');
   }
 
   /**
-   * Set up listener for MCP state changes
+   * Set up listener for FlexAgent state changes
    */
-  private setupMCPStateListener(): void {
-    // Listen for MCP connection state changes via the event bus
+  private setupFlexAgentStateListener(): void {
+    // Listen for FlexAgent connection state changes via the event bus
     eventBus.on('connection:status-changed', ({ status }) => {
-      console.debug('[AutomationService] MCP connection status changed:', status);
-      // Could add logic here to disable automation when MCP is disconnected
+      console.debug('[AutomationService] FlexAgent connection status changed:', status);
+      // Could add logic here to disable automation when FlexAgent is disconnected
     });
   }
 
@@ -462,7 +462,7 @@ export class AutomationService {
    */
   public async triggerTestAutomation(detail: ToolExecutionCompleteDetail): Promise<void> {
     console.debug('[AutomationService] Triggering test automation');
-    await this.handleToolExecutionComplete(new CustomEvent('mcp:tool-execution-complete', { detail }));
+    await this.handleToolExecutionComplete(new CustomEvent('flexagent:tool-execution-complete', { detail }));
   }
 
   /**
@@ -472,7 +472,7 @@ export class AutomationService {
     try {
       const automationState = await this.getAutomationState();
       if (automationState) {
-        (window as any).__mcpAutomationState = automationState;
+        (window as any).__flexagentAutomationState = automationState;
         console.debug('[AutomationService] Exposed automation state to window:', automationState);
       }
     } catch (error) {

@@ -1,11 +1,11 @@
 # Content Scripts
 
-This directory contains the content scripts and core functionality for the MCP SuperAssistant Chrome extension.
+This directory contains the content scripts and core functionality for the FlexAgent Connect Chrome extension.
 
 ## Overview
 
 The content scripts are responsible for:
-- Injecting the MCP integration into supported websites
+- Injecting the FlexAgent Connect integration into supported websites
 - Managing site-specific adapters
 - Handling tool execution and result insertion
 - Providing the plugin system architecture

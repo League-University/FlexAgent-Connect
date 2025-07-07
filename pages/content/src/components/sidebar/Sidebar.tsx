@@ -657,38 +657,38 @@ const Sidebar: React.FC<SidebarProps> = ({ initialPreferences }) => {
             <div className="flex items-center space-x-2">
               {/* Always show the header content immediately */}
               <a
-                href="https://mcpsuperassistant.ai/"
+                href="https://github.com/League-University/FlexAgent-Connect"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visit MCP Super Assistant Website"
+                aria-label="Visit FlexAgent Connect Repository"
                 className="block">
                 {' '}
                 {/* Make link block for sizing */}
                 <img
                   src={chrome.runtime.getURL('icon-34.png')}
-                  alt="MCP Logo"
+                  alt="FlexAgent Connect Logo"
                   className="w-8 h-8 rounded-md " // Increase size & add rounded corners
                 />
               </a>
               <>
                 {/* Wrap title in link */}
                 <a
-                  href="https://mcpsuperassistant.ai/"
+                  href="https://github.com/League-University/FlexAgent-Connect"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-800 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-150 no-underline"
-                  aria-label="Visit MCP Super Assistant Website">
+                  aria-label="Visit FlexAgent Connect Repository">
                   <Typography variant="h4" className="font-semibold">
-                    MCP SuperAssistant
+                    FlexAgent Connect
                   </Typography>
                 </a>
                 {/* Existing icon link */}
                 <a
-                  href="https://mcpsuperassistant.ai/"
+                  href="https://github.com/League-University/FlexAgent-Connect"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 transition-colors duration-150"
-                  aria-label="Visit MCP Super Assistant Website">
+                  aria-label="Visit FlexAgent Connect Repository">
                   <Icon name="arrow-up-right" size="xs" className="inline-block align-baseline" />
                 </a>
               </>
